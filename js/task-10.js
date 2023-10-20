@@ -11,7 +11,7 @@ const boxes = document.querySelector("div#boxes");
 const body = document.querySelector("body");
 
 createBtn.addEventListener("click", onCreateBtn);
-destroyBtn.addEventListener("click", destroyBoxes);
+destroyBtn.addEventListener("click", onDestroyBtn);
 
 function createBoxes(amount) {
   let size = 20;
@@ -31,11 +31,15 @@ function createBoxes(amount) {
   boxes.append(...boxesElement);
 }
 
+function destroyBoxes() {
+  boxes.innerHTML = "";
+  input.value = "";
+}
+
 function onCreateBtn() {
   createBoxes(input.value);
 }
 
-function destroyBoxes() {
-  boxes.innerHTML = "";
-  input.value = "";
+function onDestroyBtn() {
+  destroyBoxes();
 }
